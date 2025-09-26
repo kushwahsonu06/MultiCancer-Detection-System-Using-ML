@@ -1,0 +1,144 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Lung Cancer Prediction</title>
+    <style>
+        /* General Styling */
+        body, html {
+            margin: 0;
+            padding: 0;
+            font-family: Arial, sans-serif;
+            height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            color: #333;
+            background: linear-gradient(rgba(0, 179, 255, 0.6), rgba(0, 179, 255, 0.6)), url("bg.png");
+            background-size: cover;
+            background-position: center;
+        }
+
+        /* Container Styling */
+        .container {
+            background-color: rgba(255, 255, 255, 0.95);
+            padding: 2.5em;
+            border-radius: 12px;
+            max-width: 400px;
+            width: 100%;
+            box-shadow: 0 8px 15px rgba(0, 0, 0, 0.2);
+            text-align: center;
+        }
+
+        /* Heading Styling */
+        h1 {
+            font-size: 2.2em;
+            color: #0073e6;
+            margin-bottom: 1em;
+            font-weight: bold;
+        }
+
+        /* Label and Input Container Styling */
+        .form-group {
+            margin: 1em 0;
+            text-align: center;
+        }
+
+        label {
+            font-weight: bold;
+            color: #0073e6;
+            font-size: 1.1em;
+            margin-bottom: 0.5em;
+            display: block;
+        }
+
+        /* Input Styling */
+        input[type="number"] {
+            width: 90%;
+            padding: 0.6em;
+            margin-top: 0.3em;
+            border: 1px solid #ddd;
+            border-radius: 6px;
+            font-size: 1em;
+            color: #333;
+            background-color: #f0f9ff;
+            text-align: center;
+        }
+
+        /* Button Styling */
+        button {
+            width: 100%;
+            padding: 0.8em;
+            background-color: #0073e6;
+            color: white;
+            border: none;
+            border-radius: 6px;
+            font-size: 1.1em;
+            font-weight: bold;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            margin-top: 1.2em;
+            box-shadow: 0 5px 15px rgba(0, 115, 230, 0.4);
+        }
+
+        button:hover {
+            background-color: #005bb5;
+            transform: scale(1.05);
+            box-shadow: 0 8px 20px rgba(0, 115, 230, 0.6);
+        }
+
+        /* Result Text Styling */
+        .result {
+            margin-top: 1.5em;
+            font-size: 1.2em;
+            color: #0073e6;
+            font-weight: bold;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Lung Cancer Prediction</h1>
+        <form action="/predict" method="POST">
+            <div class="form-group">
+                <label for="age">Age:</label>
+                <input type="number" name="age" required min="1" max="120">
+            </div>
+
+            <div class="form-group">
+                <label for="smoking">Smoking (1 for Yes, 0 for No):</label>
+                <input type="number" name="smoking" required min="0" max="1">
+            </div>
+
+            <div class="form-group">
+                <label for="alcohol_use">Alcohol Use (1 for Yes, 0 for No):</label>
+                <input type="number" name="alcohol_use" required min="0" max="1">
+            </div>
+
+            <div class="form-group">
+                <label for="chronic_disease">Chronic Respiratory Disease (1 for Yes, 0 for No):</label>
+                <input type="number" name="chronic_disease" required min="0" max="1">
+            </div>
+
+            <div class="form-group">
+                <label for="chest_pain">Chest Pain (1 for Yes, 0 for No):</label>
+                <input type="number" name="chest_pain" required min="0" max="1">
+            </div>
+
+            <div class="form-group">
+                <label for="pollution_exposure">Exposure to Air Pollution (1 for Yes, 0 for No):</label>
+                <input type="number" name="pollution_exposure" required min="0" max="1">
+            </div>
+
+            <div class="form-group">
+                <label for="family_history">Family History of Lung Cancer (1 for Yes, 0 for No):</label>
+                <input type="number" name="family_history" required min="0" max="1">
+            </div>
+
+            <button type="submit">Predict</button>
+        </form>
+        <div class="result">{{ prediction_text }}</div>
+    </div>
+</body>
+</html>

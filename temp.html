@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Lung Cancer Prediction</title>
+  <style>
+    /* Resetting some default styles */
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    /* Basic body styling */
+    body {
+      font-family: Arial, sans-serif;
+      color: #333;
+      line-height: 1.6;
+      background: #f4f4f9;
+    }
+
+    /* Navbar styling */
+    nav {
+      background: #0073e6;
+      color: white;
+      padding: 1em;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+
+    nav .logo {
+      font-size: 1.5em;
+      font-weight: bold;
+    }
+
+    nav ul {
+      list-style: none;
+      display: flex;
+    }
+
+    nav ul li {
+      margin-left: 15px;
+    }
+
+    nav ul li a {
+      color: white;
+      text-decoration: none;
+      padding: 8px 12px;
+      transition: background 0.3s;
+    }
+
+    nav ul li a:hover {
+      background: #005bb5;
+      border-radius: 4px;
+    }
+
+    /* Hero section */
+    .hero {
+      background: url('lungs.webp') no-repeat center center/cover;
+      height: 80vh;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: rgb(10, 47, 68);
+      text-align: center;
+      padding: 20px;
+      flex-direction: column;
+    }
+
+    .hero h1 {
+      font-size: 3em;
+      margin-bottom: 0.5em;
+    }
+
+    .hero p {
+      font-size: 1.2em;
+      max-width: 600px;
+      margin-bottom: 1.5em;
+    }
+
+    /* Predict Now button styling */
+    .hero .predict-btn {
+      background: #ff5722;
+      color: white;
+      padding: 15px 30px;
+      font-size: 1.2em;
+      font-weight: bold;
+      text-transform: uppercase;
+      border: none;
+      border-radius: 8px;
+      cursor: pointer;
+      transition: all 0.3s ease;
+      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    }
+
+    .hero .predict-btn:hover {
+      background: #e64a19;
+      transform: scale(1.05);
+      box-shadow: 0 6px 12px rgba(0, 0, 0, 0.3);
+    }
+
+    /* Footer */
+    footer {
+      background: #333;
+      color: white;
+      padding: 2em;
+      text-align: center;
+      margin-top: 10 px;
+    }
+  </style>
+</head>
+<body>
+
+  <!-- Navbar -->
+  <nav>
+    <div class="logo">Lung Cancer Prediction</div>
+    <ul>
+      <li><a href="#home">Home</a></li>
+      <li><a href="#about">About</a></li>
+      <li><a href="#contact">Contact</a></li>
+    </ul>
+  </nav>
+
+  <!-- Hero Section -->
+  <div class="hero" id="home">
+    <h1>Predict Lung Cancer Risk</h1>
+    <p>Using advanced algorithms to assess your risk factors for lung cancer. Early detection can save lives.</p>
+    <a href="index.html">
+      <button class="predict-btn">Predict Now</button>
+    </a>
+  </div>
+
+  <!-- Footer -->
+  <footer>
+    <p>&copy; 2024 Lung Cancer Prediction. All rights reserved.</p>
+  </footer>
+
+</body>
+</html>
